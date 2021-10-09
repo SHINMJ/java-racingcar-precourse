@@ -1,10 +1,12 @@
 package racinggame;
 
 import static org.assertj.core.api.Assertions.*;
-import static racinggame.Constant.*;
+import static racinggame.utils.Constant.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import racinggame.cars.Moves;
 
 class MovesTest {
 

@@ -1,6 +1,8 @@
-package racinggame;
+package racinggame.cars;
 
 import java.util.List;
+
+import racinggame.cars.Car;
 
 public class Cars {
 	private List<Car> cars;

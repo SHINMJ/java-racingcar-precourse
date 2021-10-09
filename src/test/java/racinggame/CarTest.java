@@ -3,14 +3,15 @@ package racinggame;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
-import static racinggame.Constant.*;
+import static racinggame.utils.Constant.*;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import nextstep.utils.Randoms;
+import racinggame.cars.Car;
+import racinggame.utils.Messages;
 
 public class CarTest {
 
