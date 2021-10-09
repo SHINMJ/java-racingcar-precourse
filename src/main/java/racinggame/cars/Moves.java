@@ -1,25 +1,26 @@
 package racinggame.cars;
 
-import static racinggame.common.Constant.*;
-
 import racinggame.common.Count;
 
 public class Moves {
-	private String move;
+	private MoveExpression move;
 	private Count moveCount;
 
 	public Moves() {
-		this.move = "";
+		this.move = new MoveExpression("");
 		this.moveCount = new Count(0);
 	}
 
+	/**
+	 * 움직임 추가
+	 */
 	public void addMove() {
-		this.move = this.move + MOVE_EXPRESSION;
+		this.move.addMove();
 		this.moveCount.addCount();
 	}
 
 	public String getMove() {
-		return this.move;
+		return this.move.getMove();
 	}
 
 	public int getMoveCount() {

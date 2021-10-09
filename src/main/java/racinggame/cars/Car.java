@@ -13,10 +13,20 @@ public class Car {
 		this.moves = new Moves();
 	}
 
+	/**
+	 * 랜덤 숫자
+	 *
+	 * @return
+	 */
 	private int getRandom() {
 		return Randoms.pickNumberInRange(RANDOM_START_NUMBER, RANDOM_END_NUMBER);
 	}
 
+	/**
+	 * 움직일 수 있는지 체크
+	 *
+	 * @return
+	 */
 	private boolean isPossibleMove() {
 		if (getRandom() < POSSIBLE_MOVE_NUMBER) {
 			return false;
@@ -24,16 +34,30 @@ public class Car {
 		return true;
 	}
 
+	/**
+	 * 자동차 움직이기
+	 *
+	 */
 	public void setMovedCar() {
 		if (isPossibleMove()) {
 			this.moves.addMove();
 		}
 	}
 
-	public int getCount() {
+	/**
+	 * 움직인 횟수 return
+	 *
+	 * @return
+	 */
+	public int getMoveCount() {
 		return this.moves.getMoveCount();
 	}
 
+	/**
+	 * 자동차 상황 return
+	 *
+	 * @return
+	 */
 	public String getResult() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.carName.getCarName());

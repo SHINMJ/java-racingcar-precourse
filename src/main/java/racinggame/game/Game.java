@@ -37,5 +37,13 @@ public class Game {
 	public void setCount(int count) {
 		this.count = new Count(count);
 	}
-	
+
+	public void playGame() {
+		for (int i = 0; i < this.count.getCount(); i++) {
+			this.cars.moveCars();
+			this.cars.printResult();
+			System.out.println("");
+		}
+	}
+
 }

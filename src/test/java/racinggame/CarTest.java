@@ -46,7 +46,7 @@ public class CarTest {
 			car.setMovedCar();
 			car.setMovedCar();
 			car.setMovedCar();
-			assertThat(car.getCount()).isEqualTo(3);
+			assertThat(car.getMoveCount()).isEqualTo(3);
 			assertThat(car.getResult()).isEqualTo(carName+" : " + getMoveExpression(3));
 
 		}
@@ -62,7 +62,7 @@ public class CarTest {
 			car.setMovedCar();
 			car.setMovedCar();
 			car.setMovedCar();
-			assertThat(car.getCount()).isEqualTo(2);
+			assertThat(car.getMoveCount()).isEqualTo(2);
 			assertThat(car.getResult()).isEqualTo(carName+" : " + getMoveExpression(2));
 
 		}
