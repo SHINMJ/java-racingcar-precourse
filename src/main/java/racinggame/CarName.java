@@ -15,7 +15,7 @@ public class CarName {
 
 	private void validCarName(String carName) {
 		//영문, 한글, 숫자 포함 5자 이하 체크
-		if (findMatches(Pattern.compile(REG_EXP), carName)) {
+		if (!findMatches(Pattern.compile(REG_EXP), carName)) {
 			throw new IllegalArgumentException(Messages.CAR_NAME_NOT_VALID.getValues());
 		}
 	}
