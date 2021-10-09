@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import racinggame.cars.CarName;
-import racinggame.utils.Messages;
+import racinggame.common.Messages;
 
 class CarNameTest {
 

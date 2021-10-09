@@ -1,19 +1,21 @@
 package racinggame.cars;
 
-import static racinggame.utils.Constant.*;
+import static racinggame.common.Constant.*;
+
+import racinggame.common.Count;
 
 public class Moves {
 	private String move;
-	private int moveCount;
+	private Count moveCount;
 
 	public Moves() {
 		this.move = "";
-		this.moveCount = 0;
+		this.moveCount = new Count(0);
 	}
 
 	public void addMove() {
 		this.move = this.move + MOVE_EXPRESSION;
-		this.moveCount = this.moveCount + 1;
+		this.moveCount.addCount();
 	}
 
 	public String getMove() {
@@ -21,6 +23,6 @@ public class Moves {
 	}
 
 	public int getMoveCount() {
-		return this.moveCount;
+		return this.moveCount.getCount();
 	}
 }

@@ -1,0 +1,40 @@
+package racinggame.game;
+
+import static racinggame.common.Constant.*;
+import static racinggame.common.RacingUtils.*;
+
+import java.util.regex.Pattern;
+
+import racinggame.common.Messages;
+
+public class CarInputs {
+	private String input;
+
+	public CarInputs(String input) {
+		validCarInputs(input);
+		this.input = input;
+	}
+
+	private void validCarInputs(String input) {
+		//영어,한글,숫자,',' 만 포함, ','로 나뉘는 단어는 1~5자 체크
+		if (!findMatches(Pattern.compile(INPUT_REG_EXP), input)) {
+			throw new IllegalArgumentException(Messages.INPUT_NOT_VALID.getValues());
+		}
+		validCarNames(getSplitInput());
+	}
+
+	private void validCarNames(String[] inputs) {
+		for (String i : inputs) {
+			validCarName(i);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public String[] getSplitInput() {
+		return this.input.split(SPLIT_STR);
+	}
+
+}
