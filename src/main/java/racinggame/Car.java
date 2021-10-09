@@ -8,8 +8,8 @@ public class Car {
 	private CarName carName;
 	private Moves moves;
 
-	public Car(CarName carName) {
-		this.carName = carName;
+	public Car(String carName) {
+		this.carName = new CarName(carName);
 		this.moves = new Moves();
 	}
 
@@ -30,8 +30,11 @@ public class Car {
 		}
 	}
 
-	@Override
-	public String toString() {
+	public int getCount() {
+		return this.moves.getMoveCount();
+	}
+
+	public String getResult() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.carName.getCarName());
 		sb.append(" : ");
