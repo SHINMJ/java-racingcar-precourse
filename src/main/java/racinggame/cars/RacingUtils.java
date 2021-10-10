@@ -1,6 +1,6 @@
-package racinggame.common;
+package racinggame.cars;
 
-import static racinggame.common.Constant.*;
+import static racinggame.cars.Constant.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

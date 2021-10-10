@@ -1,14 +1,12 @@
 package racinggame.cars;
 
-import racinggame.common.Count;
-
 public class Moves {
 	private MoveExpression move;
 	private Count moveCount;
 
 	public Moves() {
 		this.move = new MoveExpression("");
-		this.moveCount = new Count(0, true);
+		this.moveCount = new Count(0);
 	}
 
 	/**

@@ -1,17 +1,15 @@
-package racinggame;
+package racinggame.cars;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
-import static racinggame.common.Constant.*;
+import static racinggame.cars.Constant.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import nextstep.utils.Randoms;
-import racinggame.cars.Car;
-import racinggame.common.Messages;
 
 public class CarTest {
 

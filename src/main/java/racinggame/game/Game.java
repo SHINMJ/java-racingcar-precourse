@@ -1,27 +1,22 @@
 package racinggame.game;
 
-import static racinggame.common.Constant.*;
+import static racinggame.cars.Constant.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import racinggame.cars.Car;
 import racinggame.cars.Cars;
-import racinggame.common.Count;
+import racinggame.cars.Messages;
 
 public class Game {
 	private Cars cars;
 	private CarInputs inputs;
-	private Count count;
+	private GameCount gameCount;
 
 	public Game(String input) {
-		try {
-			this.inputs = new CarInputs(input);
-			createCars(this.inputs.getInput().split(SPLIT_STR));
-		}catch (IllegalArgumentException ie) {
-			System.out.println(ie.getMessage());
-			//새로 입력 받기
-		}
+		this.inputs = new CarInputs(input);
+		createCars(this.inputs.getInput().split(SPLIT_STR));
 	}
 
 	private void createCars(String[] inputs) {
@@ -40,20 +35,18 @@ public class Game {
 		return cars.getCars();
 	}
 
-	public void setCount(int count) {
-		try {
-			this.count = new Count(count, false);
-		}catch (IllegalArgumentException e){
-			System.out.println(e.getMessage());
-			//새로 입력 받기
-		}
+	public void setCount(String count) {
+		this.gameCount = new GameCount(count);
 	}
 
 	public void playGame() {
-		for (int i = 0; i < this.count.getCount(); i++) {
+		System.out.println(Messages.GAME_RESULT.getValues());
+		for (int i = 0; i < this.gameCount.getGameCount(); i++) {
 			this.cars.moveCars();
 			this.cars.printResult();
 			System.out.println("");
 		}
+		System.out.println(Messages.GAME_END.getValues().replace("{0}", this.cars.getWinner()));
 	}
+
 }
