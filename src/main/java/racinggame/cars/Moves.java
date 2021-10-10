@@ -8,7 +8,7 @@ public class Moves {
 
 	public Moves() {
 		this.move = new MoveExpression("");
-		this.moveCount = new Count(0);
+		this.moveCount = new Count(0, true);
 	}
 
 	/**

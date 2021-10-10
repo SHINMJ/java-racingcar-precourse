@@ -22,15 +22,15 @@ class CarsTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final PrintStream originalOut = System.out;
 
-	// @BeforeEach
-	// public void setUpStreams() {
-	// 	System.setOut(new PrintStream(outContent));
-	// }
-	//
-	// @AfterEach
-	// public void restoreStreams() {
-	// 	System.setOut(originalOut);
-	// }
+	@BeforeEach
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outContent));
+	}
+
+	@AfterEach
+	public void restoreStreams() {
+		System.setOut(originalOut);
+	}
 
 	@Test
 	public void 자동차_일급컬렉션_게임_3_성공() throws Exception {

@@ -17,9 +17,10 @@ public class Game {
 	public Game(String input) {
 		try {
 			this.inputs = new CarInputs(input);
-
+			createCars(this.inputs.getInput().split(SPLIT_STR));
 		}catch (IllegalArgumentException ie) {
 			System.out.println(ie.getMessage());
+			//새로 입력 받기
 		}
 	}
 
@@ -35,8 +36,17 @@ public class Game {
 		this.cars = new Cars(carList);
 	}
 
+	public List<Car> getCars() {
+		return cars.getCars();
+	}
+
 	public void setCount(int count) {
-		this.count = new Count(count);
+		try {
+			this.count = new Count(count, false);
+		}catch (IllegalArgumentException e){
+			System.out.println(e.getMessage());
+			//새로 입력 받기
+		}
 	}
 
 	public void playGame() {
