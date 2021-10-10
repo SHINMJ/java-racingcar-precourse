@@ -1,6 +1,6 @@
 package racinggame.cars;
 
-import static racinggame.cars.Constant.*;
+import static racinggame.common.Constant.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -67,10 +67,6 @@ public class Cars {
 		}
 		sb.append(ADD_STR);
 		sb.append(car.getCarName());
-	}
-
-	public int size() {
-		return this.cars.size();
 	}
 
 	public List<Car> getCars() {

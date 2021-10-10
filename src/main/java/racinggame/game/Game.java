@@ -1,13 +1,13 @@
 package racinggame.game;
 
-import static racinggame.cars.Constant.*;
+import static racinggame.common.Constant.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import racinggame.cars.Car;
 import racinggame.cars.Cars;
-import racinggame.cars.Messages;
+import racinggame.common.Messages;
 
 public class Game {
 	private Cars cars;

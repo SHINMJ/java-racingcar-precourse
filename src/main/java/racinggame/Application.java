@@ -1,7 +1,7 @@
 package racinggame;
 
 import nextstep.utils.Console;
-import racinggame.cars.Messages;
+import racinggame.common.Messages;
 import racinggame.game.Game;
 
 public class Application {

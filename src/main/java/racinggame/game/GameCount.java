@@ -1,6 +1,6 @@
 package racinggame.game;
 
-import racinggame.cars.Messages;
+import racinggame.common.Messages;
 
 public class GameCount {
 	private int gameCount;

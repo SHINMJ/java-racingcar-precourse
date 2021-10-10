@@ -1,5 +1,7 @@
 package racinggame.cars;
 
+import racinggame.common.Messages;
+
 public class Count {
 	private int count;
 

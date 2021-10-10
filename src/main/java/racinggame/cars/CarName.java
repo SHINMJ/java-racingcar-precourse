@@ -1,6 +1,6 @@
 package racinggame.cars;
 
-import static racinggame.cars.RacingUtils.*;
+import static racinggame.common.RacingUtils.*;
 
 public class CarName {
 	private String carName;

@@ -1,14 +1,14 @@
 package racinggame.game;
 
-import static racinggame.cars.Constant.*;
-import static racinggame.cars.RacingUtils.*;
+import static racinggame.common.Constant.*;
+import static racinggame.common.RacingUtils.*;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import racinggame.cars.Messages;
+import racinggame.common.Messages;
 
 public class CarInputs {
 	private String input;

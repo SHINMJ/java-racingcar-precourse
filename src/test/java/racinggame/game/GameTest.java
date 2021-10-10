@@ -14,7 +14,7 @@ import org.mockito.MockedStatic;
 
 import nextstep.utils.Randoms;
 import racinggame.cars.Car;
-import racinggame.cars.Messages;
+import racinggame.common.Messages;
 
 class GameTest {
 

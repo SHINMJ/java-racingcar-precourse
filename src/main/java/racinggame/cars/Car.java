@@ -1,6 +1,6 @@
 package racinggame.cars;
 
-import static racinggame.cars.Constant.*;
+import static racinggame.common.Constant.*;
 
 import nextstep.utils.Randoms;
 

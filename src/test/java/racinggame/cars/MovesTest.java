@@ -1,7 +1,7 @@
 package racinggame.cars;
 
 import static org.assertj.core.api.Assertions.*;
-import static racinggame.cars.Constant.*;
+import static racinggame.common.Constant.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
