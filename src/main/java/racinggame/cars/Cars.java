@@ -1,5 +1,7 @@
 package racinggame.cars;
 
+import static racinggame.common.Constant.*;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -35,8 +37,35 @@ public class Cars {
 		Collections.sort(this.cars, (a, b) -> b.getMoveCount() - a.getMoveCount());
 	}
 
+	/**
+	 * 우승자 이름 return
+	 *
+	 * @return
+	 */
 	public String getWinner() {
 		sortDesc();
-		return this.cars.get(0).getCarName();
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.cars.get(0).getCarName());
+		int s = this.cars.get(0).getMoveCount();
+		for (int i = 1; i < this.cars.size(); i++) {
+			getCoWinner(s, this.cars.get(i), sb);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * 공동 우승자 찾기
+	 *
+	 * @param score
+	 * @param car
+	 * @param sb
+	 */
+	private void getCoWinner(int score, Car car, StringBuilder sb) {
+		if (score != car.getMoveCount()) {
+			return;
+		}
+		sb.append(ADD_STR);
+		sb.append(car.getCarName());
 	}
 }

@@ -8,7 +8,6 @@ import java.util.List;
 import racinggame.cars.Car;
 import racinggame.cars.Cars;
 import racinggame.common.Count;
-import racinggame.common.Messages;
 
 public class Game {
 	private Cars cars;
@@ -47,6 +46,4 @@ public class Game {
 			System.out.println("");
 		}
 	}
-
-
 }

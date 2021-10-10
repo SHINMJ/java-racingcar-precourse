@@ -22,15 +22,15 @@ class CarsTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final PrintStream originalOut = System.out;
 
-	@BeforeEach
-	public void setUpStreams() {
-		System.setOut(new PrintStream(outContent));
-	}
-
-	@AfterEach
-	public void restoreStreams() {
-		System.setOut(originalOut);
-	}
+	// @BeforeEach
+	// public void setUpStreams() {
+	// 	System.setOut(new PrintStream(outContent));
+	// }
+	//
+	// @AfterEach
+	// public void restoreStreams() {
+	// 	System.setOut(originalOut);
+	// }
 
 	@Test
 	public void 자동차_일급컬렉션_게임_3_성공() throws Exception {
@@ -72,6 +72,47 @@ class CarsTest {
 			cars.printResult();
 			assertThat(outContent.toString()).isEqualToIgnoringNewLines("car3 : ---car2 : --car1 : -");
 		}
+	}
 
+	@Test
+	public void 우승자_선택_성공() throws Exception {
+		Cars cars = new Cars(Arrays.asList(
+			new Car("car1"),
+			new Car("car2"),
+			new Car("car3")
+		));
+
+		try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+			mockRandoms
+				.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+				.thenReturn(4, 8, 5, 2,6,9, 3,2,7);
+
+			cars.moveCars();
+			cars.moveCars();
+			cars.moveCars();
+
+			assertThat(cars.getWinner()).isEqualTo("car3");
+		}
+	}
+
+	@Test
+	public void 공동우승자_선택_성공() throws Exception {
+		Cars cars = new Cars(Arrays.asList(
+			new Car("car1"),
+			new Car("car2"),
+			new Car("car3")
+		));
+
+		try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+			mockRandoms
+				.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+				.thenReturn(4, 8, 5, 2,6,9, 3,8,7);
+
+			cars.moveCars();
+			cars.moveCars();
+			cars.moveCars();
+
+			assertThat(cars.getWinner()).isEqualTo("car2,car3");
+		}
 	}
 }
