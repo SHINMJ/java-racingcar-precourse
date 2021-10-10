@@ -34,4 +34,9 @@ public class Cars {
 	public void sortDesc() {
 		Collections.sort(this.cars, (a, b) -> b.getMoveCount() - a.getMoveCount());
 	}
+
+	public String getWinner() {
+		sortDesc();
+		return this.cars.get(0).getCarName();
+	}
 }

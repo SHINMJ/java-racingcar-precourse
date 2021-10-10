@@ -1,5 +1,7 @@
 package racinggame.game;
 
+import static racinggame.common.Constant.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Game {
 			this.inputs = new CarInputs(input);
 
 		}catch (IllegalArgumentException ie) {
-			System.out.println(Messages.INPUT_ERROR_MESSAGE);
+			System.out.println(ie.getMessage());
 		}
 	}
 
@@ -45,5 +47,6 @@ public class Game {
 			System.out.println("");
 		}
 	}
+
 
 }

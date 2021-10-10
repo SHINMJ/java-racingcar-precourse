@@ -13,6 +13,10 @@ public class Car {
 		this.moves = new Moves();
 	}
 
+	public String getCarName() {
+		return carName.getCarName();
+	}
+
 	/**
 	 * 랜덤 숫자
 	 *

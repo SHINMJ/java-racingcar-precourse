@@ -51,4 +51,27 @@ class CarsTest {
 			assertThat(outContent.toString()).isEqualToIgnoringNewLines("car1 : ---car2 : --");
 		}
 	}
+
+	@Test
+	public void 정렬순서_성공() throws Exception {
+		Cars cars = new Cars(Arrays.asList(
+			new Car("car1"),
+			new Car("car2"),
+			new Car("car3")
+		));
+
+		try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+			mockRandoms
+				.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+				.thenReturn(4, 8, 5, 2,6,9, 3,2,7);
+
+			cars.moveCars();
+			cars.moveCars();
+			cars.moveCars();
+			cars.sortDesc();
+			cars.printResult();
+			assertThat(outContent.toString()).isEqualToIgnoringNewLines("car3 : ---car2 : --car1 : -");
+		}
+
+	}
 }
