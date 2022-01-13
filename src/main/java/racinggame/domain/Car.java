@@ -2,11 +2,11 @@ package racinggame.domain;
 
 public class Car {
     private CarName carName;
-    private Moves moves;
+    private NumberOfMoves numberOfMoves;
 
     private Car(String carName) {
         this.carName = CarName.from(carName);
-        this.moves = Moves.create();
+        this.numberOfMoves = NumberOfMoves.create();
     }
 
     public static Car of(String carName) {
@@ -14,7 +14,7 @@ public class Car {
     }
 
     public void addMoves(){
-        this.moves.addMoves();
+        this.numberOfMoves.addMoves();
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Car {
         StringBuffer sb = new StringBuffer();
         sb.append(this.carName);
         sb.append(" : ");
-        sb.append(this.moves);
+        sb.append(this.numberOfMoves);
 
         return sb.toString();
     }

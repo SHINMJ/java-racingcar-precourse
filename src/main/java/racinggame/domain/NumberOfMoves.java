@@ -4,20 +4,20 @@ import static racinggame.utils.Constants.*;
 
 import java.util.Objects;
 
-public class Moves {
+public class NumberOfMoves {
 
     private Integer moves;
 
-    private Moves(Integer moves) {
+    private NumberOfMoves(Integer moves) {
         this.moves = moves;
     }
 
-    public static Moves create() {
-       return new Moves(NUMBER_OF_MOVES_INIT);
+    public static NumberOfMoves create() {
+       return new NumberOfMoves(NUMBER_OF_MOVES_INIT);
     }
 
-    public static Moves valueOf(Integer number) {
-        return new Moves(number);
+    public static NumberOfMoves valueOf(Integer number) {
+        return new NumberOfMoves(number);
     }
 
     public void addMoves() {
