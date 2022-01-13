@@ -28,4 +28,9 @@ public class CarName {
             throw new BusinessException(CAR_NAME_EXCEPTION_MESSAGE);
         }
     }
+
+    @Override
+    public String toString() {
+        return carName;
+    }
 }

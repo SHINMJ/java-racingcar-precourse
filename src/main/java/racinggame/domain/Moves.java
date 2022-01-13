@@ -28,7 +28,8 @@ public class Moves {
         return Objects.equals(this.moves, other);
     }
 
-    public String convertExpression() {
+    @Override
+    public String toString() {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < this.moves; i++) {
             sb.append(MOVES_CHARACTER_EXPRESSION);

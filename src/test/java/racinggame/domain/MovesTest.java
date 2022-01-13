@@ -30,6 +30,6 @@ class MovesTest {
     @CsvSource(value = {"2;--", "10;----------", "1;-"}, delimiter = ';')
     void 전진횟수_문자열출력(int number, String expected) {
         Moves moves = Moves.valueOf(number);
-        assertThat(moves.convertExpression()).isEqualTo(expected);
+        assertThat(moves.toString()).isEqualTo(expected);
     }
 }
