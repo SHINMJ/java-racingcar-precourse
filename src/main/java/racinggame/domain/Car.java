@@ -17,6 +17,21 @@ public class Car {
         this.numberOfMoves.addMoves();
     }
 
+    public void moveOrStop() {
+        Moves moves = Moves.create();
+        if (moves.isMove()) {
+            addMoves();
+        }
+    }
+
+    public boolean equalsNumberOfMoves(NumberOfMoves numberOfMoves) {
+        return this.numberOfMoves.equals(numberOfMoves);
+    }
+
+    public boolean equalsName(String carName) {
+        return this.carName.equals(CarName.from(carName));
+    }
+
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
@@ -26,4 +41,5 @@ public class Car {
 
         return sb.toString();
     }
+
 }

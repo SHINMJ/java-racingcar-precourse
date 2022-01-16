@@ -25,6 +25,16 @@ public class Cars {
         return this.carList.size();
     }
 
+    public void racing(TotalMoves totalMoves) {
+        for (int i = 0; i < totalMoves.getTotalMoves(); i++) {
+            eachRacing();
+        }
+    }
+    
+    public Car get(int index) {
+        return this.carList.get(index);
+    }
+
     private String[] split(String input) {
         return input.split(Constants.CAR_NAME_SPLIT_DELIMITER);
     }
@@ -42,4 +52,12 @@ public class Cars {
             throw new BusinessException("자동차 이름이 중복되었습니다.");
         }
     }
+
+
+    private void eachRacing() {
+        for (Car car : carList) {
+            car.moveOrStop();
+        }
+    }
+
 }

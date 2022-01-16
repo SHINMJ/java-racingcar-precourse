@@ -20,6 +20,10 @@ public class TotalMoves {
         return this.totalMoves.equals(other);
     }
 
+    public Integer getTotalMoves() {
+        return this.totalMoves;
+    }
+
     private void validate(String input) {
         if (!Constants.NUMBER_PATTERN.matcher(input).matches()) {
             throw new BusinessException(TOTAL_MOVE_INPUT_MESSAGE);

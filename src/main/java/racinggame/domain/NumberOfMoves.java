@@ -29,6 +29,23 @@ public class NumberOfMoves {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        NumberOfMoves that = (NumberOfMoves) o;
+        return numberOfMoves.equals(that.numberOfMoves);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfMoves);
+    }
+
+    @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < this.numberOfMoves; i++) {
