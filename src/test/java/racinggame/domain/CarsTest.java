@@ -31,11 +31,10 @@ class CarsTest {
         Cars cars = Cars.of("car1,car2,car3");
         try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
             mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
-                .thenReturn(1,4,3);
+                .thenReturn(1,4,7);
             cars.racing(TotalMoves.of("1"));
-            assertThat(cars.get(0).equalsNumberOfMoves(NumberOfMoves.valueOf(0)));
-            assertThat(cars.get(1).equalsNumberOfMoves(NumberOfMoves.valueOf(1)));
-            assertThat(cars.get(2).equalsNumberOfMoves(NumberOfMoves.valueOf(0)));
+            Winners winners = cars.winner();
+            assertThat(winners.toString()).isEqualTo("car2,car3");
         }
     }
 }

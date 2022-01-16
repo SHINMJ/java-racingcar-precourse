@@ -20,12 +20,32 @@ public class NumberOfMoves {
         return new NumberOfMoves(numberOfMoves);
     }
 
+    public NumberOfMoves getNumberOfMoves() {
+        return NumberOfMoves.valueOf(this.numberOfMoves);
+    }
+
     public void addMoves() {
         this.numberOfMoves++;
     }
 
     public boolean is(Integer other) {
         return Objects.equals(this.numberOfMoves, other);
+    }
+
+    public int compare(NumberOfMoves other) {
+        if (this.numberOfMoves < other.numberOfMoves) {
+            return 1;
+        }
+
+        if (this.numberOfMoves > other.numberOfMoves) {
+            return -1;
+        }
+
+        return 0;
+    }
+
+    public boolean lessThan(NumberOfMoves other) {
+        return this.numberOfMoves < other.numberOfMoves;
     }
 
     @Override

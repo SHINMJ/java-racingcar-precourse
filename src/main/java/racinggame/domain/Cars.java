@@ -2,6 +2,7 @@ package racinggame.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,13 +27,32 @@ public class Cars {
     }
 
     public void racing(TotalMoves totalMoves) {
-        for (int i = 0; i < totalMoves.getTotalMoves(); i++) {
+        for (int i = Constants.ZERO_INDEX; i < totalMoves.getTotalMoves(); i++) {
             eachRacing();
         }
     }
-    
-    public Car get(int index) {
-        return this.carList.get(index);
+
+    public Winners winner() {
+        Collections.sort(this.carList);
+        return Winners.create(this.carList.subList(Constants.ZERO_INDEX, getLastIndex()));
+    }
+
+    private NumberOfMoves firstWinnerNumberOfMoves() {
+        return carList.get(Constants.ZERO_INDEX).getNumberOfMoves();
+    }
+
+    private int getLastIndex() {
+        int lastIndex = Constants.ZERO_INDEX;
+        boolean isSame = true;
+        while (isSame) {
+            lastIndex++;
+            isSame = equalsNumberOfMoves(carList.get(lastIndex).getNumberOfMoves());
+        }
+        return lastIndex;
+    }
+
+    private boolean equalsNumberOfMoves(NumberOfMoves numberOfMoves) {
+        return firstWinnerNumberOfMoves().equals(numberOfMoves);
     }
 
     private String[] split(String input) {
@@ -53,11 +73,9 @@ public class Cars {
         }
     }
 
-
     private void eachRacing() {
         for (Car car : carList) {
             car.moveOrStop();
         }
     }
-
 }
