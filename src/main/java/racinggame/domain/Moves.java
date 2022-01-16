@@ -3,9 +3,9 @@ package racinggame.domain;
 import nextstep.utils.Randoms;
 import racinggame.utils.Constants;
 
-public class Moves {
+public final class Moves {
 
-    private Integer moves;
+    private final Integer moves;
 
     private Moves() {
         this.moves = Randoms.pickNumberInRange(Constants.MOVES_MIN_VALUE, Constants.MOVES_MAX_VALUE);

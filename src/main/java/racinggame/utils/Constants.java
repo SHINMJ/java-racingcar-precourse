@@ -10,4 +10,6 @@ public class Constants {
     public static final int MOVES_MAX_VALUE = 9;
     public static final int MOVES_VALUE = 4;
 
+    public static final String CAR_NAME_SPLIT_DELIMITER = ",";
+
 }
