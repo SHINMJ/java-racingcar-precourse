@@ -1,6 +1,7 @@
 package racinggame.domain;
 
-import static racinggame.utils.Constants.*;
+import static racinggame.utils.Constants.MOVES_CHARACTER_EXPRESSION;
+import static racinggame.utils.Constants.NUMBER_OF_MOVES_INIT;
 
 import java.util.Objects;
 
@@ -13,7 +14,7 @@ public class NumberOfMoves {
     }
 
     public static NumberOfMoves create() {
-       return new NumberOfMoves(NUMBER_OF_MOVES_INIT);
+        return new NumberOfMoves(NUMBER_OF_MOVES_INIT);
     }
 
     public static NumberOfMoves valueOf(Integer numberOfMoves) {
@@ -42,10 +43,6 @@ public class NumberOfMoves {
         }
 
         return 0;
-    }
-
-    public boolean lessThan(NumberOfMoves other) {
-        return this.numberOfMoves < other.numberOfMoves;
     }
 
     @Override

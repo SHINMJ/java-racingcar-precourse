@@ -14,8 +14,6 @@ public class Constants {
 
     public static final String CAR_NAME_SPLIT_DELIMITER = ",";
 
-    public static final Pattern NUMBER_PATTERN = Pattern.compile("^[1-9]*$");
-
     public static final int ZERO_INDEX = 0;
 
 }

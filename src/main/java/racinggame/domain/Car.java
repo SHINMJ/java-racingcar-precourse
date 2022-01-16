@@ -1,8 +1,7 @@
 package racinggame.domain;
 
-import java.util.Comparator;
-
 public class Car implements Comparable<Car> {
+
     private CarName carName;
     private NumberOfMoves numberOfMoves;
 
@@ -15,7 +14,7 @@ public class Car implements Comparable<Car> {
         return new Car(carName);
     }
 
-    public void addMoves(){
+    public void addMoves() {
         this.numberOfMoves.addMoves();
     }
 
@@ -34,6 +33,10 @@ public class Car implements Comparable<Car> {
         return this.carName.toString();
     }
 
+    public NumberOfMoves getNumberOfMoves() {
+        return this.numberOfMoves.getNumberOfMoves();
+    }
+
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
@@ -47,9 +50,5 @@ public class Car implements Comparable<Car> {
     @Override
     public int compareTo(Car other) {
         return this.numberOfMoves.compare(other.numberOfMoves);
-    }
-
-    public NumberOfMoves getNumberOfMoves() {
-        return this.numberOfMoves.getNumberOfMoves();
     }
 }

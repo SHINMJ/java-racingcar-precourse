@@ -5,7 +5,8 @@ import racinggame.exception.BusinessException;
 import racinggame.utils.Constants;
 
 public class CarName {
-    private static final String CAR_NAME_EXCEPTION_MESSAGE = "1~5자의 이름을 입력해 주세요.";
+
+    private static final String CAR_NAME_EXCEPTION_MESSAGE = "[ERROR] 1~5자의 이름을 입력해 주세요.";
 
     private final String carName;
 

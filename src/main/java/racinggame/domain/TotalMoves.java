@@ -4,7 +4,8 @@ import racinggame.exception.BusinessException;
 import racinggame.utils.Constants;
 
 public class TotalMoves {
-    private static final String TOTAL_MOVE_INPUT_MESSAGE = "양의 숫자만 입력 가능합니다.";
+    private static final String TOTAL_MOVE_INPUT_MESSAGE = "[ERROR] 양의 숫자만 입력 가능합니다.";
+
     private final Integer totalMoves;
 
     private TotalMoves(String input) {
@@ -25,7 +26,7 @@ public class TotalMoves {
     }
 
     private void validate(String input) {
-        if (!Constants.NUMBER_PATTERN.matcher(input).matches()) {
+        if (parse(input) <= Constants.MOVES_MIN_VALUE) {
             throw new BusinessException(TOTAL_MOVE_INPUT_MESSAGE);
         }
     }
@@ -33,7 +34,7 @@ public class TotalMoves {
     private Integer parse(String input) {
         try {
             return Integer.parseInt(input);
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new BusinessException(TOTAL_MOVE_INPUT_MESSAGE);
         }
     }

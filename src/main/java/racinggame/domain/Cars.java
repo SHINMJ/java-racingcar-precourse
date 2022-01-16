@@ -29,6 +29,7 @@ public class Cars {
     public void racing(TotalMoves totalMoves) {
         for (int i = Constants.ZERO_INDEX; i < totalMoves.getTotalMoves(); i++) {
             eachRacing();
+            System.out.println("");
         }
     }
 
@@ -60,7 +61,7 @@ public class Cars {
     }
 
     private void addCars(String[] carNames) {
-        for (String carName: carNames) {
+        for (String carName : carNames) {
             this.carList.add(Car.of(carName));
         }
     }
@@ -69,13 +70,14 @@ public class Cars {
         String[] split = split(input);
         Set<String> sets = new HashSet<>(Arrays.asList(split));
         if (sets.size() != split.length) {
-            throw new BusinessException("자동차 이름이 중복되었습니다.");
+            throw new BusinessException("[ERROR] 자동차 이름이 중복되었습니다.");
         }
     }
 
     private void eachRacing() {
         for (Car car : carList) {
             car.moveOrStop();
+            System.out.println(car);
         }
     }
 }
